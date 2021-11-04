@@ -23,6 +23,10 @@ interface ButtonProps {
    */
   isDisabled: boolean;
   /**
+   * Full width button
+   */
+  shouldFullWidth: boolean;
+  /**
    * Optional click handler
    */
   onClick?: () => void;
@@ -37,13 +41,17 @@ export const Button = ({
   backgroundColor,
   label,
   isDisabled = false,
+  shouldFullWidth = false,
   ...props
 }: ButtonProps) => {
   const mode = primary ? styles.primary : styles.secondary;
+  const fullWidth = shouldFullWidth ? styles.fullWidth : '';
   return (
     <button
       type='button'
-      className={[styles.button, styles[size], mode].join(' ')}
+      className={[styles.button, styles[size], mode, fullWidth]
+        .join(' ')
+        .trim()}
       style={{ backgroundColor }}
       disabled={isDisabled}
       {...props}

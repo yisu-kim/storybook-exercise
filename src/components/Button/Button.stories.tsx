@@ -45,3 +45,9 @@ Disabled.args = {
   isDisabled: true,
   label: 'Button',
 };
+
+export const FullWidth = Template.bind({});
+FullWidth.args = {
+  shouldFullWidth: true,
+  label: 'Button',
+};
