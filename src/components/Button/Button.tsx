@@ -42,6 +42,7 @@ export const Button = ({
   label,
   isDisabled = false,
   shouldFullWidth = false,
+  onClick,
   ...props
 }: ButtonProps) => {
   const mode = primary ? styles.primary : styles.secondary;
@@ -54,6 +55,7 @@ export const Button = ({
         .trim()}
       style={{ backgroundColor }}
       disabled={isDisabled}
+      onClick={onClick}
       {...props}
     >
       {label}
