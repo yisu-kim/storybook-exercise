@@ -4,7 +4,7 @@
   border: 0;
   border-radius: 3em;
   cursor: pointer;
-  display: inline-block;
+  display: flex;
   line-height: 1;
 }
 .button:disabled {
@@ -38,4 +38,22 @@
   display: inline-flex;
   justify-content: center;
   width: 100%;
+}
+.icon {
+  display: flex;
+  align-self: center;
+  margin: 0 2px;
+  user-select: none;
+}
+.smallIcon svg {
+  width: 12px;
+  height: 12px;
+}
+.mediumIcon svg {
+  width: 14px;
+  height: 14px;
+}
+.largeIcon svg {
+  width: 16px;
+  height: 16px;
 }

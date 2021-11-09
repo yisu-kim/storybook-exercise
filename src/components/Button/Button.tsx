@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styles from './button.module.css';
 
 interface ButtonProps {
@@ -27,6 +27,14 @@ interface ButtonProps {
    */
   shouldFullWidth: boolean;
   /**
+   * Display an icon before the text
+   */
+  iconBefore?: ReactNode;
+  /**
+   * Display an icon after the text
+   */
+  iconAfter?: ReactNode;
+  /**
    * Optional click handler
    */
   onClick?: () => void;
@@ -42,11 +50,20 @@ export const Button = ({
   label,
   isDisabled = false,
   shouldFullWidth = false,
+  iconBefore,
+  iconAfter,
   onClick,
   ...props
 }: ButtonProps) => {
   const mode = primary ? styles.primary : styles.secondary;
   const fullWidth = shouldFullWidth ? styles.fullWidth : '';
+
+  const generateIcon = (icon: ReactNode) => (
+    <span className={[styles.icon, styles[`${size}Icon`]].join(' ').trim()}>
+      {icon}
+    </span>
+  );
+
   return (
     <button
       type='button'
@@ -58,7 +75,9 @@ export const Button = ({
       onClick={onClick}
       {...props}
     >
-      {label}
+      {iconBefore && generateIcon(iconBefore)}
+      <span>{label}</span>
+      {iconAfter && generateIcon(iconAfter)}
     </button>
   );
 };
