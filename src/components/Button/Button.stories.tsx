@@ -3,6 +3,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Button } from './Button';
 
+import { ReactComponent as StarIcon } from '../../assets/star.svg';
+
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Example/Button',
@@ -50,4 +52,22 @@ export const FullWidth = Template.bind({});
 FullWidth.args = {
   shouldFullWidth: true,
   label: 'Button',
+};
+
+export const IconBefore = Template.bind({});
+IconBefore.args = {
+  iconBefore: <StarIcon />,
+  label: 'Button',
+};
+
+export const IconAfter = Template.bind({});
+IconAfter.args = {
+  iconAfter: <StarIcon />,
+  label: 'Button',
+};
+
+export const IconOnly = Template.bind({});
+IconOnly.args = {
+  iconAfter: <StarIcon />,
+  iconOnly: true,
 };

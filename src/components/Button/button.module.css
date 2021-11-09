@@ -4,7 +4,7 @@
   border: 0;
   border-radius: 3em;
   cursor: pointer;
-  display: inline-block;
+  display: flex;
   line-height: 1;
 }
 .button:disabled {
@@ -26,16 +26,46 @@
   font-size: 12px;
   padding: 10px 16px;
 }
+.small,
+.iconOnly {
+  padding: 10px 10px;
+}
 .medium {
   font-size: 14px;
   padding: 11px 20px;
+}
+.medium,
+.iconOnly {
+  padding: 11px 11px;
 }
 .large {
   font-size: 16px;
   padding: 12px 24px;
 }
+.large,
+.iconOnly {
+  padding: 12px 12px;
+}
 .fullWidth {
   display: inline-flex;
   justify-content: center;
   width: 100%;
+}
+.icon {
+  display: flex;
+  align-self: center;
+  margin: 0 2px;
+  user-select: none;
+}
+.smallIcon svg {
+  width: 12px;
+  height: 12px;
+}
+.mediumIcon svg {
+  width: 14px;
+  height: 14px;
+}
+.largeIcon svg {
+  width: 16px;
+  height: 16px;
 }
