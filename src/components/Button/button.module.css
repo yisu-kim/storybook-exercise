@@ -26,13 +26,25 @@
   font-size: 12px;
   padding: 10px 16px;
 }
+.small,
+.iconOnly {
+  padding: 10px 10px;
+}
 .medium {
   font-size: 14px;
   padding: 11px 20px;
 }
+.medium,
+.iconOnly {
+  padding: 11px 11px;
+}
 .large {
   font-size: 16px;
   padding: 12px 24px;
+}
+.large,
+.iconOnly {
+  padding: 12px 12px;
 }
 .fullWidth {
   display: inline-flex;

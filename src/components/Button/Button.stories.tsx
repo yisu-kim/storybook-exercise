@@ -65,3 +65,9 @@ IconAfter.args = {
   iconAfter: <StarIcon />,
   label: 'Button',
 };
+
+export const IconOnly = Template.bind({});
+IconOnly.args = {
+  iconAfter: <StarIcon />,
+  iconOnly: true,
+};

@@ -35,6 +35,10 @@ interface ButtonProps {
    */
   iconAfter?: ReactNode;
   /**
+   * Display an icon only
+   */
+  iconOnly: boolean;
+  /**
    * Optional click handler
    */
   onClick?: () => void;
@@ -47,11 +51,12 @@ export const Button = ({
   primary = false,
   size = 'medium',
   backgroundColor,
-  label,
+  label = '',
   isDisabled = false,
   shouldFullWidth = false,
   iconBefore,
   iconAfter,
+  iconOnly = false,
   onClick,
   ...props
 }: ButtonProps) => {
@@ -67,7 +72,7 @@ export const Button = ({
   return (
     <button
       type='button'
-      className={[styles.button, styles[size], mode, fullWidth]
+      className={[styles.button, styles[size], mode, fullWidth, styles.iconOnly]
         .join(' ')
         .trim()}
       style={{ backgroundColor }}
@@ -76,7 +81,7 @@ export const Button = ({
       {...props}
     >
       {iconBefore && generateIcon(iconBefore)}
-      <span>{label}</span>
+      {!iconOnly && <span>{label}</span>}
       {iconAfter && generateIcon(iconAfter)}
     </button>
   );
